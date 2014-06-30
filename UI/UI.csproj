@@ -2191,7 +2191,6 @@
     <Content Include="jquery-ui\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="jquery-ui\themes\base\minified\jquery.ui.tooltip.min.css" />
     <EmbeddedResource Include="Models\bindings.js" />
-    <Content Include="UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

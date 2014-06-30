@@ -3,10 +3,8 @@
     using Core;
     using Microsoft.Owin.Testing;
     using NUnit.Framework;
-    using System;
     using System.IO;
     using System.Net;
-    using System.Text.RegularExpressions;
     using UI;
 
     [TestFixture]
@@ -30,7 +28,7 @@
             _server.Dispose();
         }
 
-        [Category("Core.Microsoft.Owin.StaticFiles")]
+        [Category("Expecting Status Code 200")]
         [Test, Description("Send an HTTP request to Microsoft.Owin.StaticFiles for a embedded resource file in a different assembly (UI.dll) and verify the response.")]
         public void CanRetrieveEmbeddedResourceFromSeparateAssemblyWithHttp([ValueSource("GetEmbeddedResourcePaths")]string embeddedResourcePath)
         {
@@ -43,7 +41,7 @@
                          Is.EqualTo(response.Content.ReadAsStringAsync().Result));
         }
 
-        [Category("Core.Microsoft.Owin.StaticFiles")]
+        [Category("Expecting Status Code 404")]
         [Test, Description("Send an HTTP request to Microsoft.Owin.StaticFiles for a file in a different assembly (UI.dll) that is not an embedded resource and verify the response.")]
         public void CannotRetrieveOtherFiles([ValueSource("GetNonEmbeddedContentPaths")]string nonEmbeddedResourcePath)
         {
