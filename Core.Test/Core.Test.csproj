@@ -32,25 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsQuery">
-      <HintPath>..\packages\CsQuery.1.3.3\lib\net40\CsQuery.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.3.0.0-beta1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.0-beta1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Hosting">
       <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.0-beta1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.0-beta1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Testing">
       <HintPath>..\packages\Microsoft.Owin.Testing.3.0.0-beta1\lib\net45\Microsoft.Owin.Testing.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy, Version=0.23.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Nancy.0.23.0\lib\net40\Nancy.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Testing">
-      <HintPath>..\packages\Nancy.Testing.0.23.0\lib\net40\Nancy.Testing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,15 +64,12 @@
   <ItemGroup>
     <Compile Include="ModuleRoutesTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{2bed5f19-2384-4bc7-b7ce-b1fb0b70008d}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UI\UI.csproj">
       <Project>{54333a04-0eca-4525-82e3-d64f834411f1}</Project>
       <Name>UI</Name>
