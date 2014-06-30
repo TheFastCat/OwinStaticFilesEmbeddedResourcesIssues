@@ -1,0 +1,6 @@
+C:\Source\SalesApplication\SalesApplication\UI\bin\Release\UI.dll
+C:\Source\SalesApplication\SalesApplication\UI\bin\Release\UI.pdb
+C:\Source\SalesApplication\SalesApplication\UI\bin\Release\Versioning.dll
+C:\Source\SalesApplication\SalesApplication\UI\bin\Release\Versioning.pdb
+C:\Source\SalesApplication\SalesApplication\UI\obj\Release\UI.dll
+C:\Source\SalesApplication\SalesApplication\UI\obj\Release\UI.pdb
