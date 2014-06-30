@@ -51,35 +51,6 @@
             var response = _server.HttpClient.GetAsync(nonEmbeddedResourcePath.Replace("UI.", "/")).Result;
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
-
-        [Category("Core.Module")]
-        [Test, Description("Send an HTTP request to the /hello route configured in Core.Module verify that the view, an embedded resource file in a different assembly (UI.dll), is returned as expected.")]
-        public void HelloRouteReturnsHelloHtml()
-        {
-            var response = _server.HttpClient.GetAsync("/hello").Result;
-            Assert.AreEqual(true, response.IsSuccessStatusCode);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-            Assert.That(response.Content.ReadAsStringAsync().Result, 
-                Is.EqualTo("Hello World from Embedded Resource View in a separate assembly, hello.html"));
-        }
-
-        [Category("Core.Module")]
-        [Test, Description("Send an HTTP request to the /time route configured in Core.Module verify an associated view, an embedded resource file in a different assembly (UI.dll), is returned as expected.")]
-        public void TimeRouteReturnsOK()
-        {
-            var response = _server.HttpClient.GetAsync("/time").Result;
-            Assert.AreEqual(true, response.IsSuccessStatusCode);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-        }
-
-        [Category("Core.Module")]
-        [Test, Description("Send an HTTP request to the /image route configured in Core.Module verify an associated view, an embedded resource file in a different assembly (UI.dll), is returned as expected.")]
-        public void ImageRouteReturnsOK()
-        {
-            var response = _server.HttpClient.GetAsync("/image").Result;
-            Assert.AreEqual(true, response.IsSuccessStatusCode);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-        }
     }
 
     static class Extensions
