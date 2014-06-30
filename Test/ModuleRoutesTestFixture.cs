@@ -37,8 +37,8 @@
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
 
             // compare content returned via HTTP with manually retrieved from assembly by the [TestFixture]
-            Assert.That(typeof(Hooker).Assembly.GetManifestResourceStream(embeddedResourcePath).StreamAsString(),
-                         Is.EqualTo(response.Content.ReadAsStringAsync().Result));
+            Assert.That(typeof(Hooker).Assembly.GetManifestResourceStream(embeddedResourcePath),
+                         Is.EqualTo(response.Content.ReadAsStreamAsync().Result));
         }
 
         [Category("Expecting Status Code 404")]
@@ -48,17 +48,6 @@
             // request the embedded resource served via HTTP from Owin.StaticFiles
             var response = _server.HttpClient.GetAsync(nonEmbeddedResourcePath.Replace("UI.", "/")).Result;
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
-        }
-    }
-
-    static class Extensions
-    {
-        public static string StreamAsString(this Stream stream)
-        {
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
-            }
         }
     }
 }
