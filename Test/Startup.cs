@@ -1,6 +1,5 @@
 ﻿namespace Core
 {
-    using Microsoft.Owin.Extensions;
     using Microsoft.Owin.FileSystems;
     using Microsoft.Owin.StaticFiles;
     using Owin;
