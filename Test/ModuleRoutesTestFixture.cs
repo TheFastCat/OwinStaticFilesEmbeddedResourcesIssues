@@ -54,10 +54,12 @@
             var response = _server.HttpClient.GetAsync(nonEmbeddedResourcePath.Replace("UI.", "/")).Result;
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
+
         private static bool CompareMemoryStreams(MemoryStream ms1, MemoryStream ms2)
         {
             if (ms1.Length != ms2.Length)
                 return false;
+
             ms1.Position = 0;
             ms2.Position = 0;
 
