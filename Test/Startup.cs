@@ -14,7 +14,6 @@
                 ServeUnknownFileTypes = true,
                 FileSystem = new EmbeddedResourceFileSystem(typeof(UI.Hooker).Assembly, "UI")
             });
-            app.UseStageMarker(PipelineStage.MapHandler); // http://goo.gl/XrYGMh
         }
     }
 }
